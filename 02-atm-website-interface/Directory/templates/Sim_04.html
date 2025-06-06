@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='simulator_01.css') }}">
+</head>
+<body>
+    <div class="container grid-container">
+        <button class="button" onclick="window.location.href='sim_D'">Deposit</button>
+        <button class="button" onclick="window.location.href='sim_W'">Withdrawal</button>
+        <button class="button" onclick="window.location.href='sim_B'">Check Balance</button>
+        <button class="button" onclick="window.location.href='/simulator'">Cancel</button>
+    </div>
+</body>
+</html>

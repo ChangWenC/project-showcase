@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Echoes of the Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      background: #f4f4f4;
+      overflow: hidden;
+    }
+    .left {
+        width: 50vw;
+        padding: 80px;
+        background: #fcfcfc;
+        overflow-y: scroll;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    .left h1 {
+      font-size: 42px;
+      font-weight: 600;
+      color: #4A145A;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .left p {
+      font-size: 16px;
+      color: #775D8A;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .left p:nth-of-type(1) {
+      animation-delay: 0.4s;
+    }
+    .left p:nth-of-type(2) {
+      animation-delay: 0.8s;
+    }
+    .left p:nth-of-type(3) {
+      animation-delay: 1.2s;
+    }
+    .left p:nth-of-type(4) {
+      animation-delay: 1.6s;
+    }
+    .left p:nth-of-type(5) {
+      animation-delay: 2.0s;
+    }
+    .left p:nth-of-type(6) {
+      animation-delay: 2.4s;
+    }
+    .left p:nth-of-type(7) {
+      animation-delay: 2.8s;
+    }
+    .left p:nth-of-type(8) {
+      animation-delay: 3.2s;
+    }
+    .right {
+      width: 50vw;
+      flex: 1;
+      background-image: url('assets/Pic_Title.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .nav {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .nav a {
+      color: #4A145A;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav a:hover {
+      color: #B85A5A;
+    }
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      color: #C0AFCF;
+      font-size: 14px;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="text-decoration: none;">
+    <div style="position: absolute; top: 20px; left: 30px; z-index: 10; display: flex; align-items: center; gap: 12px;">
+      <img src="assets/logo.png" alt="Echoes Logo" style="height: 200px; width: 200px; object-fit: contain; margin-top: -60px; margin-left: -20px;">
+      <span style="font-size: 22px; font-weight: 600; color: #4A145A; font-family: 'Inter', sans-serif;"></span>
+    </div>
+  </a>
+  <div class="left">
+    <h1>About Echoes of the Masters</h1>
+    <p><strong>Project Designer: Roy Chen</strong></p>
+    <p><strong>Emerging Technology:</strong> This tool explores generative AI in the context of art. While generative models like DALL·E and MidJourney have received public attention, their use in fine arts remains a relatively new and ethically complex application. The technology is still emerging in terms of its integration into traditional artistic and educational institutions.</p>
+    <p><strong>Ethical Dilemma:</strong> The core dilemma addressed here is whether AI-generated artworks—which rely on past human-created styles—should be evaluated by the same moral and artistic standards as human works. Does the process of learning from art justify AI's claim to creativity, or is this mimicry fundamentally different?</p>
+    <p><strong>Why it matters:</strong> This dilemma impacts artists, students, and institutions navigating a rapidly evolving creative landscape. As AI tools reshape how art is made and judged, users must consider not only who creates, but also who has the right to create and be credited. The ethical questions influence copyright, authorship, education, and cultural preservation.</p>
+    <p>Echoes of the Masters is an interactive ethical design prototype that invites users to reflect on the origins of artistic creativity—human or artificial. The tool visually analyzes uploaded artworks and identifies stylistic traces linked to historical painters like Van Gogh, Monet, and Haring. Through this lens, it engages the viewer in a deeper philosophical question: can AI-generated art be truly original?</p>
+    <p>Our core argument is rooted in the idea that all artists—whether human or artificial—are influenced by what came before them. Throughout history, human creativity has never emerged in a vacuum. From the Renaissance masters who revived classical ideals, to Impressionists who reinterpreted light and nature, every great movement in art has been built on the shoulders of the past. Artists learn through imitation, reinterpretation, and iteration.</p>
+    <p>AI systems, similarly, learn by analyzing vast collections of past artworks. The outputs they generate are not random, but derive meaning from patterns learned in existing cultural traditions. If this process of learning and referencing is acceptable—and even celebrated—for humans, why should it be considered less legitimate for machines?</p>
+    <p>Grounded in <strong>deontological ethics</strong>—particularly the Kantian tradition—this project asks what principles should guide fairness in creative practices. According to Kant’s <em>categorical imperative</em>, if an action (such as learning from the past) is acceptable for one agent (a human), it must be ethically acceptable for others (including machines), assuming they follow the same method. This principle forms the moral foundation for our argument in support of AI-generated art.
+  </div>
+  <div class="right">
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="upload.html">Upload</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer">Every artwork has a past. Let’s uncover yours.</div>
+  </div>
+</body>
+</html>

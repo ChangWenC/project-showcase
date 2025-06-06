@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of the Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      background: #f4f4f4;
+      overflow: hidden;
+    }
+    .left {
+      flex: 1;
+      background: #fcfcfc;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+    .left::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+    .slide {
+      transform: translateY(-110px);
+      padding: 80px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      scroll-snap-align: start;
+    }
+    .slide h1 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #4A145A;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation: fadeInDown 1s ease forwards;
+    }
+    .slide h1 span.red {
+      color: #B85A5A;
+    }
+    .slide h1 span.blue {
+      color: #275D75;
+    }
+    .slide p {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #775D8A;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation: fadeInDown 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    .upload-btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #4A145A;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: fit-content;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1s;
+    }
+    .upload-btn:hover {
+      background-color: #31103e;
+      transform: scale(1.05);
+    }
+    .scroll-down-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 25%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #4A145A;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+  z-index: 10;
+  transition: transform 0.3s ease, color 0.4s ease;
+}
+.scroll-down-indicator:hover {
+  transform: translateX(-50%) translateY(-6px);
+  color: #B85A5A;
+}   
+    .right {
+      flex: 1;
+      background-image: url('assets/Pic_Title.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .nav {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: slideInRight 1.2s ease forwards;
+    }
+    .nav a {
+      color: #4A145A;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav a:hover {
+      color: #B85A5A;
+    }
+    .video-intro {
+      position: absolute;
+      left: 40px;
+      bottom: 40px;
+      color: #4A145A;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    .video-intro::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 20px;
+    }
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      color: #C0AFCF;
+      font-size: 14px;
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+  .slide h1, .slide p, .upload-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.slide.visible h1,
+.slide.visible p,
+.slide.visible .upload-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide {
+  scroll-snap-align: center;
+}
+
+</style>
+</head>
+<body>
+  <a href="index.html" style="text-decoration: none;">
+    <div style="position: absolute; top: 20px; left: 30px; z-index: 10; display: flex; align-items: center; gap: 12px;">
+      <img src="assets/logo.png" alt="Echoes Logo" style="height: 200px; width: 200px; object-fit: contain; margin-top: -60px; margin-left: -20px;">
+      <span style="font-size: 22px; font-weight: 600; color: #4A145A; font-family: 'Inter', sans-serif;"></span>
+    </div>
+  </a>
+  <div class="left">
+    <div class="slide" style="transition: opacity 0.6s ease;">
+  <h1>Learn <span class="red">From</span> the <span class="blue">Past</span></h1>
+  <p>All artists, human or machine, are influenced by what came before. From Renaissance masters to modern creatives, every great work builds upon history. Echoes of the Masters reveals those lineages through AI-driven visual analysis.</p>
+</div>
+    <div class="slide" style="transition: opacity 0.6s ease;">
+  <h1>Discover the <span class="red">origins</span> of your <span class="blue">art</span></h1>
+  <p>Upload an artwork and explore its stylistic ancestry. See how brushwork, composition, and color link your image to the great artists of the past.</p>
+  <a href="upload.html"><button class="upload-btn">Upload Your Artwork</button></a>
+</div>
+    <div class="slide" style="transition: opacity 0.6s ease;">
+      <h1>Understand the Ethics</h1>
+      <p>Echoes is grounded in Kantian deontology. It challenges the idea that AI is ethically inferior in learning. If it's acceptable for humans to learn from art history, then the same must apply to AI—if we hold moral rules to be universal.</p>
+      <a href="about.html"><button class="upload-btn">For more Information</button></a>
+    </div>
+  <button class="scroll-down-indicator" onclick="scrollToNextSlide()">↓</button>
+  </div>
+  <div class="right">
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="upload.html">Upload</a>
+      <a href="source.html">Source</a>
+    </div>
+    <div class="video-intro">play video intro</div>
+    <div class="footer">Every artwork has a past. What’s yours?</div>
+  </div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.style.opacity = '1';
+      } else {
+        entry.target.style.opacity = '0';
+      }
+    });
+  }, { threshold: 0.6 });
+
+  slides.forEach(slide => {
+    observer.observe(slide);
+  });
+
+  function scrollToNextSlide() {
+  const container = document.querySelector('.left');
+  const slides = Array.from(container.querySelectorAll('.slide'));
+  const currentScroll = container.scrollTop;
+  const currentIndex = slides.findIndex(slide => slide.offsetTop > currentScroll + 10);
+  const nextSlide = slides[currentIndex];
+  if (nextSlide) {
+    container.scrollTo({
+      top: nextSlide.offsetTop,
+      behavior: 'smooth'
+    });
+    container.style.scrollBehavior = 'auto';
+    setTimeout(() => container.style.scrollBehavior = 'smooth', 800);
+      behavior: 'smooth'
+    };
+  }
+  
+</script>
+</body>
+</html>

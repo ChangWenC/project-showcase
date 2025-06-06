@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore | Echoes of the Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f7f5f9;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: #fcfcfc;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: scale(4); /* Enlarges the logo */
+      margin-left: 20px;
+    }
+    .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+    }
+    .logo span {
+      font-size: 20px;
+      font-weight: 600;
+      color: #4A145A;
+    }
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #4A145A;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #B85A5A;
+    }
+    main {
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .uploaded-artwork {
+      align-self: center;
+      max-width: 600px;
+      border: 3px dashed #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      background: #fff;
+    }
+    .uploaded-artwork img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .section img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .section-content {
+      flex: 1;
+    }
+    .section-content h2 {
+      color: #4A145A;
+      margin-bottom: 10px;
+    }
+    .section-content p {
+      color: #5a4e66;
+      font-size: 15px;
+    }
+      @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .uploaded-artwork, .section {
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .uploaded-artwork {
+      animation-delay: 0.3s;
+    }
+
+    .section:nth-of-type(2) {
+      animation-delay: 0.6s;
+    }
+
+    .section:nth-of-type(3) {
+      animation-delay: 0.9s;
+    }
+
+    .section:nth-of-type(4) {
+      animation-delay: 1.2s;
+    }
+
+    .section:nth-of-type(5) {
+      animation-delay: 1.5s;
+    }ww
+
+    .guide-banner {
+      background: #ece2f4;
+      color: #4A145A;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 32px;
+      animation: fadeInUp 1s ease forwards;
+
+    }
+    .guide-banner a {
+      color: #B85A5A;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload</a>
+      <a href="about.html">About</a>
+      <a href="source.html">Source</a>
+    </nav>
+  </header>
+  <main>
+    <div class="guide-banner">
+      Curious why we’re analyzing your art this way? <a href="about.html">Learn the ethical reasoning behind it →</a>
+    </div>
+    <div class="uploaded-artwork">
+      <img id="uploadedImage" src="" alt="Uploaded Artwork">
+    </div>
+<script>
+  const uploadedImage = document.getElementById('uploadedImage');
+  const imageData = sessionStorage.getItem('uploadedImageData');
+  if (imageData) {
+    uploadedImage.src = imageData;
+  } else {
+    uploadedImage.alt = 'No image uploaded yet';
+    uploadedImage.style.display = 'none';
+  }
+</script>
+
+    <div class="section">
+      <img src="assets/van-gogh.jpg" alt="Vincent van Gogh">
+      <div class="section-content">
+        <h2>Vincent van Gogh</h2>
+        <p><strong>Brushwork:</strong> Your image contrasts Van Gogh's expressive, swirling brushstrokes. While your work maintains smooth and blended strokes, some flower edges exhibit thicker applications reminiscent of Van Gogh’s texture.</p>
+        <p><strong>Color Palette:</strong> The rich reds and yellows echo Van Gogh’s preference for vibrant complementary tones, though your image retains a more subdued and earthy feel overall.</p>
+        <p><strong>Lighting & Mood:</strong> Unlike Van Gogh’s dynamic lighting and emotional intensity, your work evokes a calm stillness through balanced tones and shadow.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="assets/monet.jpg" alt="Claude Monet">
+      <div class="section-content">
+        <h2>Claude Monet</h2>
+        <p><strong>Brushwork:</strong> Your soft blending of flowers and vase edges recalls Monet’s impressionist style, particularly in the way form emerges gently from texture.</p>
+        <p><strong>Color Harmony:</strong> The muted background and soft transitions between floral hues are evocative of Monet’s approach to atmospheric light and subtle color diffusion.</p>
+        <p><strong>Composition:</strong> Like Monet, your work frames the floral subject loosely, allowing elements to bleed gently into the surrounding space rather than enforcing hard outlines.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="assets/haring.jpg" alt="Keith Haring">
+      <div class="section-content">
+        <h2>Keith Haring</h2>
+        <p><strong>Stylistic Contrast:</strong> Your work shows little similarity to Haring’s urban, symbolic, high-contrast approach.</p>
+        <p><strong>Linework & Form:</strong> Haring’s art emphasizes bold outlines and graphic repetition, while your piece reflects painterly, natural forms and traditional tonal transitions.</p>
+        <p><strong>Conclusion:</strong> This match serves as a visual foil—highlighting the classical and subdued essence of your piece by contrasting it with Haring's dynamic pop energy.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

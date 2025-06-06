@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Amount</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='simulator_01.css') }}">
+    <script>
+        function checkInput() {
+            const amount = document.getElementById('amount').value;
+            const button = document.getElementById('submit-button');
+            if (amount) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        }
+
+        function handleSubmit() {
+            const amount = document.getElementById('amount').value;
+            if (amount > 658) {
+                window.location.href = 'sim_WLR';
+            } else {
+                window.location.href = 'sim_WL';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container input-container">
+        <p class="input-text">Enter desired amount</p>
+        <input type="number" id="amount" class="amount-input" oninput="checkInput()" placeholder="Enter amount in euros">
+        <button id="submit-button" class="full-width-button" style="display: none;" onclick="handleSubmit()">Submit</button>
+    </div>
+</body>
+</html>

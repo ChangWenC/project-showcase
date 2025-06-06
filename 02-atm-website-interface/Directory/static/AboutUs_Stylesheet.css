@@ -1,0 +1,346 @@
+/* Body styling */
+body {
+  background-color: #FCF7EF !important; /* 设置整个页面的背景色 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  font-size: 100%; /* 默认字体大小 */
+  transition: font-size 1s ease-in-out; /* 添加动画效果 */
+}
+
+a {
+    margin: 10px 10px 10px 10px;
+}
+
+button{
+    margin: 10px 10px 10px 10px;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Navigation bar styling */
+/* 顶部导航条样式 */
+.topnav {
+  background-color: #ffcc00; /* 导航条背景色 */
+  overflow: visible; /* 溢出的内容可见 */
+  display: flex; /* 使用弹性盒布局 */
+  justify-content: flex-end; /* 内容靠右对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  font-family: Arial, Helvetica, sans-serif; /* 字体样式 */
+  font-weight: 600; /* 字体加粗 */
+  border-bottom: 7px solid #000000; /* 底部边框 */
+  position: fixed; /* 固定位置 */
+  width: 100%; /* 宽度为100% */
+  box-shadow: 0 5px 14px 0 rgba(0,0,0,.5);
+  position: fixed; /* 已经设置为固定定位，这是设置z-index的前提 */
+  z-index: 100; /* 确保导航栏在顶层 */
+}
+
+body.colorblind .topnav {
+  background-color: #FFDE1D !important;
+}
+
+/* Link styling inside the navigation bar */
+/* 导航条内链接样式 */
+.topnav a {
+  float: left; /* 左浮动 */
+  color: #000; /* 文字颜色 */
+  text-align: center; /* 文本居中 */
+  padding: 14px 16px; /* 内边距 */
+  text-decoration: none; /* 去除下划线 */
+  font-size: 17px; /* 字号 */
+}
+
+/* Hover effect for links */
+/* 链接悬停效果 */
+.topnav a:hover {
+  background-color: #d5a906; /* 悬停背景色 */
+  border-radius: 5px;
+  color: black; /* 悬停文字颜色 */
+}
+
+/* Active link styling */
+/* 激活链接样式 */
+.topnav a.active {
+  background-color: #d5a906; /* 激活背景色 */
+  border-radius: 5px;
+  color: black; /* 激活文字颜色 */
+}
+
+  /* line under navigator bar */
+.nav-line {
+  margin-top: 0px;
+  margin-bottom: 0;
+  color: black;
+}
+
+.settingbutton {
+  background-color: #ffcc00; /* Makes the background of the button transparent */
+  border: none; /* Removes the border of the button */
+  padding: 40; /* Removes padding inside the button */
+  outline: none; /* Removes the focus outline that might appear when clicked */
+  box-shadow: none; /* Removes any shadow effects */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px; /* Width of the icon */
+  height: auto; /* Height adjusts automatically */
+  transform: scale(1.9); /* Scales the icon up by 1.9 times */
+}
+
+.settingicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  margin-left: 16px;
+  width: 20px;
+  height: auto;
+  transform: scale(1.9); /* 将图标放大两倍，不影响div大小 */
+}
+
+/* Logo styling */
+/* Logo 样式 */
+.logo {
+  display: flex; /* 使用弹性盒布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  margin-right: auto; /* 右边距自动 */
+  margin-left: 5px; /* 左边距5像素 */
+}
+
+.logo img {
+  width: 160px; /* 图片宽度 */
+  height: auto; /* 图片高度自适应 */
+  justify-content: center; /* 水平居中 */
+
+}
+
+/* Menu picture styling */
+/* 菜单图片样式 */
+.menu-pic {
+  height: auto; /* 高度自适应 */
+  width: 100%; /* 宽度100% */
+  align-items: center; /* 垂直居中 */
+}
+
+/* Offcanvas styling */
+/* 侧滑菜单样式 */
+.offcanvas {
+  background-color: #504c4c !important; /* 背景颜色 */
+  position: fixed; /* 使用固定定位，使其不会影响整体布局 */
+  color: #FCF7EF !important;
+}
+
+.nav-item {
+  margin-top: 17px;
+}
+
+/* .offcanvas-title {
+} */
+
+.label-text {
+  margin-left: 20px;
+}
+
+.switch-wrap {
+  margin-left: 90px;
+  background-color: #000000 !important;
+}
+
+
+/* toggle switch */
+.wraper {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2em;
+  align-items: center;
+}
+
+.switch-wrap {
+  cursor: pointer;
+  background: #15273b;
+  padding: 3.5px;
+  width: 60px;
+  height: 33.5px;
+  border-radius: 33.5px;
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+.switch {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0fr 1fr 1fr;
+  transition: .2s;
+  &::after {
+    content: '';
+    border-radius: 50%;
+    background: #ccc;
+    grid-column: 2;
+    transition: background .2s;
+  }
+}
+input:checked {
+  + .switch {
+    grid-template-columns: 1fr 1fr 0fr; 
+    &::after {
+      background-color: #52cf71;
+    }
+  }
+}
+
+/* Language menu */
+.lang-menu {
+  position: relative;
+}
+
+.lang-menu ul {
+  margin: 0;
+  padding: 0;
+  background-color: #504c4c;
+  border: 1px solid #504c4c;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  top: 100%;  /* 使下拉菜单完全在导航条下方 */
+  z-index: 1000;  /* 确保下拉菜单在最上层 */
+  transform: translateX(-40px); 
+}
+
+.lang-menu ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lang-menu:hover ul {
+  display: block;
+}
+
+.lang-menu ul li a {
+  /* color: #FCF7EF !important; */
+  width: 140px;
+  display: block;
+  padding: 5px 10px;
+  pointer-events: auto; /* 确保链接可以接受点击 */
+}
+
+.lang-menu ul li a:before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+  /* background-image: url(https://flagsapi.com/CN/shiny/32.png); */
+}
+
+.nl:before {
+  background-image: url(https://flagsapi.com/NL/shiny/32.png);
+}
+
+.us:before {
+  background-image: url(https://flagsapi.com/US/shiny/32.png);
+}
+
+.cn:before {
+  background-image: url(https://flagsapi.com/CN/shiny/32.png);
+}
+
+
+/* Text */
+.about-us {
+  font-family: Arial, sans-serif; /* 设置字体 */
+  max-width: 1000px; /* 最大宽度 */
+  margin: 150px auto; /* 位置设定在nav下 以及水平居中显示 */
+  padding: 20px; /* 内边距 */
+}
+
+.custom-hr {
+  border: none;         /* 移除默认边框 */
+  height: 6px;          /* 之前定义的高度 */
+  background-color: rgb(255, 204, 1); /* 使用RGB值指定颜色 */
+  border-radius: 10px;  /* 圆角效果 */
+  margin-left: 150px;   /* 左侧间距 */
+  margin-right: 150px;  /* 右侧间距 */
+  margin-top: 80px;
+  margin-bottom: 80px;
+  opacity: 1;                 /* 设置透明度为50% */
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  width: 100%;
+  background: #2D2E33;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 15px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+  color: #ffcc00;
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+  color: #ffcc00;
+}

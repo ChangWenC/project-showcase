@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter PIN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='simulator_01.css') }}">
+    <script>
+        function appendNumber(number) {
+            const input = document.getElementById('pin');
+            if (input.value.length < 4) {
+                input.value += number;
+            }
+            checkPin();
+        }
+
+        function clearPin() {
+            document.getElementById('pin').value = '';
+            checkPin();
+        }
+
+        function checkPin() {
+            const pin = document.getElementById('pin').value;
+            const button = document.getElementById('submit-button');
+            if (pin.length === 4) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container pin-container">
+        <p class="pin-text">Enter your 4-digit PIN:</p>
+        <input type="password" id="pin" class="pin-input" readonly>
+        <div class="numpad">
+            <button class="num-button" onclick="appendNumber('1')">1</button>
+            <button class="num-button" onclick="appendNumber('2')">2</button>
+            <button class="num-button" onclick="appendNumber('3')">3</button>
+            <button class="num-button" onclick="appendNumber('4')">4</button>
+            <button class="num-button" onclick="appendNumber('5')">5</button>
+            <button class="num-button" onclick="appendNumber('6')">6</button>
+            <button class="num-button" onclick="appendNumber('7')">7</button>
+            <button class="num-button" onclick="appendNumber('8')">8</button>
+            <button class="num-button" onclick="appendNumber('9')">9</button>
+            <button class="num-button" onclick="clearPin()">Clear</button>
+        </div>
+        <button id="submit-button" class="yellow-button" style="display: none;" onclick="window.location.href='/sim_04'">Submit</button>
+    </div>
+</body>
+</html>

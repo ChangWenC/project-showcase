@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='simulator_01.css') }}">
+</head>
+<body class="intro-body">
+    <div class="intro-container">
+        <div class="intro-text">
+            <p>Welcome to the Geldmaat ATM simulator! In this demo you will be able to interact with an online ATM and experiment with it without pressure or time limit. This demo is purely for educational purposes, it cannot access your bank account and do transactions and does not keep information or logs from the inputs. This is an alpha prototype and is likely to look very different from the final product. If you have read and agree with the terms feel free to click the 'I agree' button. If not do not use the simulator.</p>
+            <button class="agree-button" onclick="window.location.href='/sim_02'">I agree</button>
+        </div>
+    </div>
+</body>
+</html>

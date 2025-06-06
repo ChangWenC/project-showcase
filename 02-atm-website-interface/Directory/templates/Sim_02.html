@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page with Image and Button</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='simulator_01.css') }}">
+</head>
+<body>
+    <div class="container image-container">
+        <img src="{{ url_for('static', filename='images/card.gif') }}" alt="Sample Image" class="image">
+        <button class="full-width-button" onclick="window.location.href='/sim_03'">Insert Card</button>
+    </div>
+</body>
+</html>

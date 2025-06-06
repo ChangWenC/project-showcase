@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annotated Sources | Echoes of the Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    .left {
+      width: 50vw;
+      padding: 80px;
+      background: #fcfcfc;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    .left h1 {
+      font-size: 44px;
+      font-weight: bold;
+      color: #4A145A;
+      margin-bottom: 30px;
+      font-family: 'Inter', sans-serif;
+    }
+    .left .source {
+      margin-bottom: 32px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .left .source:nth-of-type(1) { animation-delay: 0.3s; }
+    .left .source:nth-of-type(2) { animation-delay: 0.6s; }
+    .left .source:nth-of-type(3) { animation-delay: 0.9s; }
+    .left .source:nth-of-type(4) { animation-delay: 1.2s; }
+    .left .source:nth-of-type(5) { animation-delay: 1.5s; }
+    .left .source:nth-of-type(6) { animation-delay: 1.8s; }
+    .left .source p {
+      font-size: 15px;
+      color: #5a4e66;
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+    .right {
+      width: 50vw;
+      flex: 1;
+      background-image: url('assets/Pic_Title.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .nav {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .nav a {
+      color: #4A145A;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .nav a:hover {
+      color: #B85A5A;
+    }
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      color: #C0AFCF;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="text-decoration: none;">
+    <div style="position: absolute; top: 20px; left: 30px; z-index: 10; display: flex; align-items: center; gap: 12px;">
+      <img src="assets/logo.png" alt="Echoes Logo" style="height: 200px; width: 200px; object-fit: contain; margin-top: -60px; margin-left: -20px;">
+    </div>
+  </a>
+  <div class="left">
+    <h1>Annotated List of Sources</h1>
+
+    <div class="source">
+      <p><strong>Kant, I.</strong> (1785). <em>Groundwork of the Metaphysics of Morals</em> (M. Gregor, Trans.). Cambridge University Press.</p>
+      <p>This is the foundational text for Kantian deontological ethics. It introduces the concept of the categorical imperative, which is central to our argument about moral consistency between human and AI art practices.</p>
+    </div>
+
+    <div class="source">
+      <p><strong>Floridi, L., & Sanders, J. W.</strong> (2004). On the morality of artificial agents. <em>Minds and Machines, 14</em>(3), 349–379. https://doi.org/10.1023/B:MIND.0000035461.63578.9d</p>
+      <p>This article explores whether artificial agents can be assigned moral responsibility. It supports the project’s investigation into AI's ethical role in creativity.</p>
+    </div>
+
+    <div class="source">
+      <p><strong>McCormack, J., Gifford, T., & Hutchings, P.</strong> (2019). Autonomy, authenticity, authorship and intention in computer generated art. <em>Proceedings of the 10th International Conference on Computational Creativity</em>, 257–264.</p>
+      <p>This paper addresses philosophical concerns surrounding authorship and authenticity in AI-generated artworks, reinforcing the legitimacy of machine-based creativity.</p>
+    </div>
+
+    <div class="source">
+      <p><strong>Elgammal, A., Liu, B., Elhoseiny, M., & Mazzone, M.</strong> (2017). CAN: Creative adversarial networks, generating art by learning about styles and deviating from style norms. <em>arXiv preprint</em> arXiv:1706.07068.</p>
+      <p>This technical paper introduces the CAN model, a machine learning architecture designed to generate art with creativity. It highlights how AI can not only imitate, but also innovate.</p>
+    </div>
+
+    <div class="source">
+      <p><strong>Boden, M. A.</strong> (1998). Creativity and artificial intelligence. <em>Artificial Intelligence, 103</em>(1–2), 347–356. https://doi.org/10.1016/S0004-3702(98)00055-1</p>
+      <p>Boden analyzes how AI can produce creative outputs and what defines creativity itself. This source is foundational for discussions on whether AI can be considered genuinely creative or merely imitative.</p>
+    </div>
+
+    <div class="source">
+      <p><strong>Colton, S., & Wiggins, G. A.</strong> (2012). Computational creativity: The final frontier? In <em>Frontiers in Artificial Intelligence and Applications</em> (pp. 21–26). IOS Press.</p>
+      <p>This paper proposes frameworks for evaluating creativity in AI systems. It directly supports the legitimacy of AI-generated content as a form of authentic creative practice.</p>
+    </div>
+
+  </div>
+  <div class="right">
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="upload.html">Upload</a>
+      <a href="source.html">Source</a>
+    </div>
+    <div class="footer">Explore the thinking behind the machine.</div>
+  </div>
+</body>
+</html>
